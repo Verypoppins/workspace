@@ -257,4 +257,138 @@ ___
     Es la pizza ya hecha. Con la receta (la imagen), haces la pizza (contenedor). La pizza ya tiene todo lo que necesitas (ingredientes), y ahora está lista para comer. Puedes comer pizza (usar el contenedor), pero si te quedas sin pizza, puedes hacer una nueva usando la receta (imagen). Cada pizza que haces (contenedor) es una copia de la receta (imagen), y cada vez que la haces, es una pizza nueva.
     3.3 **¿cómo creamos un contenedor?**
        `→ Comando: docker + create + (nombre de la imagen)` = saca un ID de esa imagen. 
-       
+
+---
+# SEMANA 2
+## 01. AGILE (Buenas prácticas)
+*Profesores: Josu Gorostegui y Juan Ignacio Forcén.*
+
+**Introducción al control de versiones (GIT):**
+**GIT** es el ejecutable. El archivo local que ejecuto y que luego subo a las plataformas de almacenamiento (GitHub por ejemplo). Es como una máquina del tiempo, me permite volver a versiones anteriores si me hiciese falta. 
+**GIT HUB:** servicio de almacenamiento. No tiene nada que ver con GIT, sólo sirve para almacenar y compartir mis versiones.
+**Git Lab**: otra herramienta (investigar sobre qué es pero los de Veridas lo usan)
+
+>Para iniciar o saber dónde está mi repositorio git, introducir el siguiente comando en mi terminal desde la carpeta usuario: ls -F1 .git/
+
+**Comandos:**
+code . (abre el visual en el directorio que haya creado o donde esté con el pwd)
+
+>    01. Git add + nombre del archivo (agrega todos los cambios del directorio) ej: git commit -m "he subido una prueba"
+>    02. Git commit -m "El texto que le pones a lo que estás subiendo". ej: git commit -m "he subido una prueba".
+>    03. Git log (Te enseña lo que has subido)
+        - 
+>    04. Git commit --amend -m "nuevo mensaje" añade solo el mensaje nuevo. 
+>    05. Git commit --amend (cambios en el último commit)
+>    06. Git diff: permite ver las diferencias por ejemplo entre 2 ficheros. (Sólo diff me permite ver que es lo que vamos a añadir nuevo antes de hacer el "commit").
+>    07. Git tag V1.0 (simplemente sirve para etiquetar mis versiones).
+>    08. Git checkout nombre_rama: 
+>    09. Git brunch new_feature
+> **Siempre pull (repositorio actualizado), commit (mis cambios) y push (actualización y subida de los cambios)**
+> **Pushear siempre, es mejor actualizar contantemente y subir pequeños cambios que hacer una archivo enorme porque me dará problemas si son archivos colaborativos.**
+- **Clonar:** haces una copia completa de un repositorio pero sólo para ti. 
+- **Fork:** es como una copia pero que puedo volver a mergear con el master original con su permiso. Pero te descargas el contenido sólo hasta el punto en el que lo has forkeado, no se te añaden los commits nuevos que se hagan en el archivo master. 
+
+pasos para hacer rama:
+
+---
+
+### Ejercicio 1 - Operaciones con terminal
+Tareas a realizar:
+1. **Renombrar los tres ficheros:**
+a. first.txt -> primero.txt
+*sol -> mv first.txt primero.txt*
+b. second.txt -> segundo.txt
+*sol -> mv second.txt segundo.txt*
+c. tercero.txt -> tercero.txt
+*sol -> mv third.txt tercero.txt*
+- el mv renombra los archivos.
+2. **Borrar el directorio folder2**
+*sol -> rm -r folder2*
+- rm -r borra el directorio y todo su contenido. 
+3. **Crear una carpeta llamada imagenes (vacía)**
+*sol -> mkdir imagenes*
+- mkdir crea un directorio nuevo.
+4. **En la carpeta folder1 crear un archivo de texto con contenido (cualquier nombre).**
+*sol -> echo "Esto es una línea de texto" > folder1/con-texto.txt*
+- echo añade texto y > folder1/con-texto.txt crea un archivo dentro de esa carpeta directamente. 
+5. **En la carpeta folder1 crear un archivo de texto sin contenido (cualquier nombre).**
+*sol -> touch folder1/vacio.txt*
+- touch folder1/vacio.txt crea un archivo de texto vacío dentro de la ruta marcada.
+6. **En la carpeta raíz, ejecutando find * debería verse lo siguiente.**
+[$ find *
+folder1
+folder1/zzz.txt
+folder1/abc.txt
+folder1/vacio.txt
+primero.txt
+segundo.txt
+tercero.txt]
+*sol -> find*
+- find * te muestra el listado con todo el contenido incluidos los sub-niveles.
+7. **Ejecutar el comando anterior (find `*`) y redirigir la salida a un archivo de texto (cualquier nombre).** 
+*sol -> find * > 7.txt*
+- find * + > + 7.txt guarda esa estructura en el nuevo archivo creado.
+---
+### Ejercicio 2 - Git
+Este ejercicio es una continuación del ejercicio anterior.
+Los mensajes de commit se dejan a libre elección del estudiante.
+1. **Crear un repositorio git en una carpeta vacía (lo podemos llamar curso)**
+*sol -> mkdir curso / cd curso / git init (init crea un reositorio vacío en una carpeta .git oculta donde se guarda el historial)* 
+- **mkdir crea carpeta nueva / cd te posiciona dentro de la carpeta / git init crea el repositorio vacío con una carpeta .git oculta donde se guarda todo el historial.**
+2. **Añadir el archivo primero.txt, y segundo.txt al repositorio (commit)**
+> *sol -> cp "home/usuario/ALB../Temario/01../Ejercicio 1/primero.txt .* **+** *cp "home/usuario/ALB../Temario/01../Ejercicio 1/segundo.txt .* **+** *git add primero.txt segundo.txt* **+** *git commit -m "Copia y añade primero.txt y segundo.txt" / . copia los archivos en el directorio actual*
+- **"cp" copia los archivos al reositorio actual / "git add" los añade / "git commit -m" nos explica lo que hemos añadido**
+3. **Copiar la carpeta folder1 al repositorio con todo su contenido**
+*sol -> cp -r "/home/usuario/ALB../Temario/01--/Ejercicio 1/folder1" . / git add folder1 / git commit -m "añadir folder1 y su contenido"*
+- **"cp -r" copia todo el contenido de una carpeta / "git add" lo añade / "git commit -m especifica lo que hemos subido" / " ." añade ese commit en el directorio actual**
+4. **Añadir un archivo vacío al repositorio (commit)**
+*sol -> tuch archivo-vacio.txt / git add archivo-vacio.txt / git commit -m "Añadido un archivo vacío"*
+- **"touch" crea el archivo vacío / "git add" lo añade / "git commit -m lo especifica**
+5. **Crear una rama (el nombre puede ser cualquiera) y añadir el archivo tercero.txt(commit)**
+*sol -> git checkout -b mi-rama / cp "/home/usuario/ALB../Temario/01../Ejercicio 1/tercero.txt" . **+** git add tercero.txt **+** git commit -m "añadir tercero.txt a mi-rama"*
+- **"git checkout -b" crea la rama y te cambia a ella directamente / "cp + ruta + " ." te copia el archivo tercero.tx en el directorio actual" / "git add" añade el archivo / "git commit -m le añade la descripción al tu nuevo commit en mi-rama**
+6. **Añadir una línea de texto al final del fichero tercero.txt (commit)**
+*sol -> echo "linea añadida" >> tercero.txt / git add tercero.txt / git commit -m "añadir una línea al final del archivo tercero.txt"*
+- **"echo te añade el texto 7 ">>" te coloca el nuevo texto al final de archivo / "git add" te lo sube / "git commit -m te lo especifica según lo que pongas**
+7. **Copiar tercero.txt en cuarto.txt (commit en la rama)**
+*sol -> cp tercero.txt cuarto.txt / git add cuarto.txt / git commit -m "Crea un archivo nuevo a partir del inicial"*
+- **cp copia el archivo completo con otro nombre / "git add" lo añade / "git commit -m especifica que has hecho**
+8. **Hacer un merge de la rama con master**
+*sol -> git checkout master / git merge mi-rama*
+- **"git checkout master" cambia a la rama master que es donde queremos poner los cambios / "git merge mi-rama" combina los cambios de la rama "mi-rama" en la rama master. Así todo lo que hemos hecho en "mi-rama" ahora también está en master**
+9. **(Estamos en master)**
+10. **Copiar el archivo del apartado 7 del ejercicio 1 (commit)**
+*sol -> cp "/home/usuario/ALB../Temario/01../Ejercicio 1/7.txt" . / git add 7.txt / git commit -m "Añadir el archivo 7,txt con estructura del proyecto"*
+- **cp + .../7.txt + " ." copia ese archivo con todo su contenido en el directorio actual / git add lo añade / git commit -m lo especifica**
+11. **Ejecutar find * de nuevo y redirigir la salida a un nuevo archivo (commit, en master).**
+*sol -> find * > estructura-final.txt / git add estructura-final.txt / git commit -m "Añadir el nuevo archivo"*
+- **find * para ver la estructura + ">" redirigirla a un nuevo archivo llamado "estructura-final.txt" / git add añade ese nuevo archivo / git commit -m "" especifica lo que subimos**
+12. **Ejecutar git log --oneline --decorate --graph --all y redirigir la salida a un nuevo archivo (commit, en master). Una vez terminado los puntos anteriores enviar el .zip a través de la plataforma moodle.**
+*sol -> git log --oneline --decorate --graph --all > historial-git.txt / git add historial-git.txt / git commit -m "guardar el historial de commits"*
+- **git log + oneline (muestra cada commit en 1 línea); decorate (muestra los nombres de ramas y etiquetas junto a los commits); graph (dibuja una representación visual del historial y los merges); all (muestra todas las ramas y no sólo la actual) / ">" redirige esta información a un nuevo archivo llamado historial-git.txt / git add lo añade / git commit -m lo especifica**
+---
+### Ejercicio 3 - Git Avanzado
+En este ejercicio partiremos de cero, tendremos que inicializar una carpeta vacía para
+poder trabajar con git.
+1. **Crear un archivo llamado "config.sh" con el siguiente contenido:**
+`#!/bin/bash
+export DB_USERNAME="admin"
+export DB_PASSWORD="secretpassword"
+echo "Username: $DB_USERNAME"
+echo "Password: $DB_PASSWORD"`
+> *sol -> cd Ejercicio\ 3 / git init / cat <<EOF > config.sh
+#!/bin/bash
+export DB_USERNAME="admin"
+export DB_PASSWORD="secretpassword"
+echo "Username: \$DB_USERNAME"
+echo "Password: \$DB_PASSWORD"
+EOF*
+- **"Git init" inicializa el repositorio en la carpeta actual / cat <<EOF...EOF> es una forma de escribir varias líneas en un archivo desde la terminal / config.sh**
+2. **Añadir y hacer commit de config.sh.**
+*sol -> git add config.sh / git commit -m "Texto"*
+3. **Crear un archivo .gitignore y agregar config.sh a él para evitar que se trackeen
+cambios futuros en este archivo.**
+*sol -> echo "config.sh" >> .gitignore / git add .gitignore / git commit -m "X"*
+4. **Modificar config.sh cambiando la contraseña a "newpassword".**
+5. **Usar git stash para guardar temporalmente estos cambios sin hacer commit.**
+6. **Crear una nueva rama llamada feature/login.**
