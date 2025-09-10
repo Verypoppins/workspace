@@ -300,6 +300,7 @@ code . (abre el visual en el directorio que haya creado o donde esté con el pwd
 - **Clonar:** haces una copia completa de un repositorio pero sólo para ti. 
 - **Fork:** es como una copia pero que puedo volver a mergear con el master original con su permiso. Pero te descargas el contenido sólo hasta el punto en el que lo has forkeado, no se te añaden los commits nuevos que se hagan en el archivo master. 
 
-pasos para hacer rama:
-
----
+pasos para hacer una nueva rama: 
+1. git checkout -b "nombre de la rama"
+2. git checkout master (te cambia a la master)
+3. git checkout "nombre de la rama" te mueve a la nueva rama
