@@ -225,6 +225,17 @@ Es un sistema de control de versiones. En pocas palabras, es una herramienta que
 ## GITHUB:
 Es una plataforma web que se basa en Git para alojar, gestionar y colaborar en proyectos de software. Es como un almacén en línea para tus proyectos que usan Git.
 
+- Para actualizar la información se puede realizar directamente desde el terminal o editando el propio GitHub:
+  - **Terminal:**
+  - 1. Nos posicionamos dentro de la carpeta donde está nuestro archivo (cp ...)
+  - 2. git add "archivo.md"
+  - 3. git commit -m "x"
+  - 4. git push origin master
+  - **GitHub:**
+  - 1. Accedemos al archivo
+  - 2. Editamos directamente en el archivo desde la opción "Edit"
+  - 3. Se guarda automáticamente
+
 **Características de GitHub:**
 
 >**1. Repositorio remoto:** GitHub ofrece un lugar donde puedes almacenar tus repositorios Git de forma remota, es decir, en la nube. Esto te permite acceder a tus proyectos desde cualquier lugar y compartirlos con otros.
