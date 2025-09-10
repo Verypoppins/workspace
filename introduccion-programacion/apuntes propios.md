@@ -234,7 +234,8 @@ Es una plataforma web que se basa en Git para alojar, gestionar y colaborar en p
   - **GitHub:**
   - 1. Accedemos al archivo
   - 2. Editamos directamente en el archivo desde la opción "Edit"
-  - 3. Se guarda automáticamente
+  - 3. Darle a commit changes...
+  - *"Git stash" guarda temporalmente los cambios sin hacer el commit*
 
 **Características de GitHub:**
 
@@ -401,5 +402,52 @@ EOF*
 cambios futuros en este archivo.**
 *sol -> echo "config.sh" >> .gitignore / git add .gitignore / git commit -m "X"*
 4. **Modificar config.sh cambiando la contraseña a "newpassword".**
+*sol -> nano config.sh / cambiar secretpassword por newpassword*
 5. **Usar git stash para guardar temporalmente estos cambios sin hacer commit.**
+*sol -> git stash*
 6. **Crear una nueva rama llamada feature/login.**
+*sol -> git checkuot -b feature/login*
+7. **En esta nueva rama, crear un archivo login.sh con el siguiente contenido:**
+    >#!/bin/bash echo "Funcionalidad de login"
+*sol -> touch login.sh / nano login.sh: #!/bin/bash
+echo "Funcionalidad de login"*
+8. **Hacer commit de login.sh.**
+*sol -> git add login.sh / git commit -m "añadido el login.sh"*
+9. **Volver a la rama master y crear un archivo main.sh con el siguiente contenido: #!/bin/bash
+echo "Aplicación principal"**
+*sol -> git checkout master / touch main.sh / nano main.sh: #!/bin/bash
+echo "Aplicación principal"*
+10. **Hacer commit de main.sh.**
+*sol -> git add main.sh / git commit -m "Añadido el main"*
+11. **Usar git rebase para integrar los cambios de master en feature/login.**
+*sol -> git checkout feature/login / git rebase master*
+12. **En la rama feature/login, modificar login.sh añadiendo una nueva función y hacer commit.**
+*sol -> git checkout feature/login / nano login.sh / añadir: login() {
+  echo "Login realizado"
+} / git add login.sh / git commit -m "Añadida la nueva funcionalidad en el login.sh"*
+13. **Volver a master y modificar también login.sh de una manera diferente.**
+*sol -> git checkout master / nano login.sh / Añadir la funcionalidad: login() {
+  echo "Login realizado"
+} / git add login.sh / git commit -m "Añadida la nueva funcionalidad en login.sh"*
+14. **Intentar hacer merge de feature/login en master. Esto debería causar un conflicto.**
+*sol -> "**git merge**" feature/login / "**git status**" / "**nano**" login.sh: #!/bin/bash echo "Login alternativo"
+login() {echo "Login realizado"} / "**git add**" login.sh / "**git commit -m**" "Arreglado el conflicto entre ambas versiones*
+15. **Resolver el conflicto manualmente y completar el merge.**
+
+16. **Crear una nueva rama llamada hotfix desde master.**
+*sol -> git checkout -b hotfix (se denominan así las ramas que están creadas para corregir errores urgentes) aunque la he puesto mal y he puesto "hotflix" / git branch (para saber en qué rama estoy)*
+17. **En hotfix, hacer un cambio en main.sh y hacer commit.**
+*sol -> nano main.sh: echo "Hotfix aplicado" / git add main.sh / git commit -m "Apliado el hotfix en main.sh"*
+**18. Volver a master y usar git cherry-pick para aplicar el commit de la rama hotfix sin hacer merge.**
+*sol -> git checkout master / git log hotflix --oneline (para saber el hash (ID) del commit que hicimos en esta rama hotflix) y cogemos la referencia que aparece en la primera línea delante del (hotflix) -- 5e34709 / git cherry-pick 5e34709 (copia un commit específico que en este caso será el del hotfix/hotflix) / git log --oneline si queremos ver el cambio.
+>*Cuando aplicamos el cherry-pick a ese número, sólo nos modifica ese commit sin traer todo el historial modificado de la rama, es como copiar y pegar un commit puntual*
+19. **En master, usar git reset --hard para volver al estado anterior al cherry-pick.**
+*sol -> git reset --hard HEAD~1 (el head~1 hace referencia al commit anterior al actual)*
+20. **Usar git reflog para encontrar el commit perdido y recuperarlo creando una nueva rama.**
+*sol -> git reflog (q para salir) / git checkout -b recuperacion 8900b9b / git log --oneline (para ver que se ha recuperado el head borrado)*
+21. **Finalmente, usar git revert para deshacer el commit que añadió main.sh en master.**
+*sol >git checkout master / git log --oneline (buscar el main.sh (625a2b3)) / git revert "625a2b3"(crea un nuevo commit que revierte otro commit anterior, no borra el historial como el git reset. Ideal para deshacer cambios en ramas compartidas o públicas con master) / git log --oneline para revisar que se ha cambiado*
+22. **Usar git rebase para incorporar los cambios de la rama "recuperacion" a master.**
+*sol -> git checkout master / git rebase recuperacion (da error así que tengo que decidir si borrar el main.sh del master) / git rebase --continue + aceptar / git log --oneline --graph (para revisar si se hizo bien) + q para salir*
+23. **Aplicar los cambios guardados en el stash usando git stash pop y hacer un commit con estos cambios.**
+*sol -> git stash pop (recupera los cambios guardado y elimina el stash aplicado) / git add config.sh (añadimos el archivo modificado que nos aparece en rojo) / git commit -m "Aplicados los cambios guardados en stash" / git push origin master (para reflejar esos cambios en GitHub)*
