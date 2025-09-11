@@ -304,3 +304,26 @@ pasos para hacer una nueva rama:
 1. git checkout -b "nombre de la rama"
 2. git checkout master (te cambia a la master)
 3. git checkout "nombre de la rama" te mueve a la nueva rama
+
+# Miércoles 10/09/25
+*Comandos de GIT:**
+- tldr: comando que te explica para qué sirve un comando con ejemplos.
+- oh my zsh: se instala y te ayuda a especificar en qué rama estás.
+- git init: es como crear un nuevo proyecto.
+- git status: ver cómo está el proyecto, si hay cambios, si falta algo por subir...
+- git log: para ver los commits
+- git commit:
+- git pull: 
+- git remote -v: nos dice dónde está vinculado nuestro repositorio.
+- git fetch: **revisar**
+- git remote: añadir a mano un repositorio o ver los que ya están en el.
+- git stash: Guarda tus cambios actuales para que puedas hacer otra cosa.
+- git stash pop: Recupera esos cambios y los pone de nuevo en tu proyecto.
+- git blame: muestra quien modificó cada línea de un archivo.
+- git show: muestra información detallada sobre un objeto (commits, tag,etc)
+- git rebase:
+- git cherry-pick: 
+- git reset --hard HEAD~1: basicamente deshace los cambios como si volvieras a empezar.
+- git reflog: registra todos los cambios, incluso aquellos que se han perdido con comandos como git rebase.
+
+---
