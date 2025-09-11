@@ -1,10 +1,4 @@
-<style>
-h1 { color: blue; }
-ul { color: black; }
-</style>
-
-# DÍA 1 (COMANDOS Y SÍMBOLOS EN EL TERMINAL)
-![TERMINAL](Images/image.png)
+# SEMANA 1
 
 ## COMANDOS:
 - **PWD** "Print Working Directory": su función es mostrar la ruta completa del directorio en el que te encuentras actualmente. En mi caso es por ejemplo: /home/usuario.
@@ -124,9 +118,6 @@ ___
     `Ej → mkdir nueva_carpeta || echo "No se pudo crear la carpeta"` Si mkdir falla (por ejemplo, la carpeta ya existe), se ejecuta el echo.
 <br>
 ___
-___
-
-# DÍA 2 (IDEs)
 ## IDE:
 
 Aplicación de software que proporciona un conjunto de herramientas y funcionalidades integradas para facilitar el desarrollo de software. Reúne diversas herramientas como un editor de código, un depurador, un compilador, un sistema de control de versiones y más, en una única interfaz.
@@ -210,7 +201,6 @@ ___
 ***
 <br>
 
-# DÍA 3: GITHUB Y DOCKER
 ## GIT:
 Es un sistema de control de versiones. En pocas palabras, es una herramienta que te permite hacer un seguimiento de los cambios que realizas en tus archivos o proyectos a lo largo del tiempo.
 
