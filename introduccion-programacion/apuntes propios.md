@@ -275,39 +275,6 @@ ___
 ## 01. AGILE (Buenas prácticas)
 *Profesores: Josu Gorostegui y Juan Ignacio Forcén.*
 
-**Introducción al control de versiones (GIT):**
-**GIT** es el ejecutable. El archivo local que ejecuto y que luego subo a las plataformas de almacenamiento (GitHub por ejemplo). Es como una máquina del tiempo, me permite volver a versiones anteriores si me hiciese falta. 
-**GIT HUB:** servicio de almacenamiento. No tiene nada que ver con GIT, sólo sirve para almacenar y compartir mis versiones.
-**Git Lab**: otra herramienta (investigar sobre qué es pero los de Veridas lo usan)
-
->Para iniciar o saber dónde está mi repositorio git, introducir el siguiente comando en mi terminal desde la carpeta usuario: ls -F1 .git/
-
-**Comandos:**
-code . (abre el visual en el directorio que haya creado o donde esté con el pwd)
-
->    01. Git add + nombre del archivo (agrega todos los cambios del directorio) ej: git commit -m "he subido una prueba"
->    02. Git commit -m "El texto que le pones a lo que estás subiendo". ej: git commit -m "he subido una prueba".
->    03. Git log (Te enseña lo que has subido)
-        - 
->    04. Git commit --amend -m "nuevo mensaje" añade solo el mensaje nuevo. 
->    05. Git commit --amend (cambios en el último commit)
->    06. Git diff: permite ver las diferencias por ejemplo entre 2 ficheros. (Sólo diff me permite ver que es lo que vamos a añadir nuevo antes de hacer el "commit").
->    07. Git tag V1.0 (simplemente sirve para etiquetar mis versiones).
->    08. Git checkout nombre_rama: 
->    09. Git brunch new_feature
-> **Siempre pull (repositorio actualizado), commit (mis cambios) y push (actualización y subida de los cambios)**
-> **Pushear siempre, es mejor actualizar contantemente y subir pequeños cambios que hacer una archivo enorme porque me dará problemas si son archivos colaborativos.**
-- **Clonar:** haces una copia completa de un repositorio pero sólo para ti. 
-- **Fork:** es como una copia pero que puedo volver a mergear con el master original con su permiso. Pero te descargas el contenido sólo hasta el punto en el que lo has forkeado, no se te añaden los commits nuevos que se hagan en el archivo master. 
-
-pasos para hacer una nueva rama: 
-1. git checkout -b "nombre de la rama"
-2. git checkout master (te cambia a la master)
-3. git checkout "nombre de la rama" te mueve a la nueva rama
-
----
-# Miércoles 10/09/25
-
 ### ✅ Control de versiones:
 
 El control de versiones es una metodología esencial en el desarrollo de software. Permite rastrear, organizar y administrar los cambios en el código a lo largo del tiempo (como una máquina del tiempo para tu proyecto).
