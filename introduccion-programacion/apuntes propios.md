@@ -352,23 +352,26 @@ En un entorno colaborativo, los desarrolladores comparten sus repositorios y cam
 5. Se hace merge en la rama principal
 
 Los PRs permiten revisión, discusión y control de calidad antes de integrar código.
-
+___
 ## Resumen de comandos Git explicados por categorías:
 1. **🔧 Configuración e inicialización:**
 Es lo primero que haces al comenzar un proyecto con Git. Aquí preparas el entorno para que Git pueda rastrear los cambios.
     - **"git init":** Inicializa un repositorio vacío en la carpea actual. Crea una carpeta oculta .git donde Git guarda todo.
+<br>
 2. **📄 Ver estado y preparar archivos:**
 Git necesita saber qué archivos vas a incluir en tu próximo "foto" del proyecto (el commit). En esta parte defines qué cosas cambiaste y qué vas a guardar.
     - **"git status"** Muestra el estado de los archivos (cuáles cambiaron, cuáles están listos para guardar).
     - **"git add <archivo>"** Prepara un archivo para ser guardado en el próximo commit.
     - **"git add ."**	Añade todos los archivos modificados al área de preparación (staging).
     - **"git diff"**	Muestra las diferencias entre los archivos actuales y los guardados en el último commit. Te ayuda a ver qué cambió.
+<br>
 3. **💾 Guardar cambios (commits)**:
 Un commit es como una fotografía del proyecto. Guardas el estado actual del código con un mensaje que explique qué hiciste.
     - **"git commit -m "mensaje""**	Crea un commit con los archivos que preparaste con git add.
     - **"git log"**	Muestra el historial de commits.
     - **"git log --oneline"**	Muestra el historial de commits de forma compacta (una línea por commit).
     - **"git log --graph"**	Visualiza las ramas y fusiones en forma de gráfico (estructura del proyecto).
+<br>
 4. 🌍 **Conectar con repositorios remotos (como GitHub):**
 Permite trabajar en equipo. Un repositorio remoto es una copia de tu proyecto en la nube (ej: GitHub). Puedes subir tus cambios o bajar los de otros.
     - **"git clone <url>"**	Crea una copia local de un repositorio remoto.
@@ -378,6 +381,7 @@ Permite trabajar en equipo. Un repositorio remoto es una copia de tu proyecto en
     - **"git push -u origin <rama>"**	Sube la rama y la deja "enlazada" para futuros push sin especificar rama.
     - **"git fetch"**	Descarga cambios del repositorio remoto sin fusionarlos. Te permite revisarlos antes.
     - **"git pull"**	Descarga y fusiona automáticamente los cambios del remoto con tu rama local.
+<br>
 5. 🌿**Trabajo con ramas (branches)**:
 Las ramas te permiten trabajar en nuevas funcionalidades sin romper la versión principal del proyecto. Cada rama es como una línea de tiempo separada.
     - **"git branch"**	Lista todas las ramas existentes y te dice en cuál estás.
@@ -386,15 +390,18 @@ Las ramas te permiten trabajar en nuevas funcionalidades sin romper la versión 
     - **"git merge <rama>"**	Une otra rama con la actual. Muy usado para integrar trabajo terminado.
     - **"git rebase <rama>"**	Mueve los commits de tu rama como si hubieran salido directamente de otra (historial más limpio).
     - **"git cherry-pick <SHA>"**	Aplica un commit específico de otra rama a la rama actual. Muy útil para mover solo lo necesario.
+<br>
 6. 📦**Cambios temporales y recuperación**:
 A veces necesitas pausar lo que estás haciendo, o deshacer cosas. Git tiene comandos para guardar cambios temporalmente o recuperar commits eliminados.
     - **"git stash"**	Guarda los cambios actuales sin hacer commit. Útil si necesitas cambiar de rama rápido.
     - **"git stash pop"**	Recupera los cambios que habías guardado con stash.
     - **"git reset"**	Deshace cambios o mueve la historia del proyecto. Puede eliminar commits, sacarlos del staging, etc.
     - **"git reflog"** Muestra un historial detallado de todo lo que hiciste, incluso si usaste reset o rebase. Muy útil para recuperar cosas borradas.
+<br>
  7. 🏷️**Etiquetas (tags):**
  Las tags marcan puntos importantes del proyecto (como versiones de lanzamiento).
     - **"git tag <nombre>"**: Crea una etiqueta en el commit actual. Útil para marcar versiones estables.
+<br>
  8. 🪝 **Git Hooks (automatización):**
  Los Git Hooks son scripts que se ejecutan automáticamente en ciertos momentos, como antes de hacer un commit, o antes de hacer push. Se usan para validar código, ejecutar tests, o asegurarse de que el commit cumple ciertas reglas.
  **Importante:**
@@ -404,13 +411,13 @@ A veces necesitas pausar lo que estás haciendo, o deshacer cosas. Git tiene com
         - **"pre-commit"**	Antes de hacer un commit. Sirve para validar código, revisar errores, correr pruebas
         - **"commit-msg"**	Cuando escribes el mensaje del commit. Sirve para validar formato del mensaje
         - **"pre-push"**	Antes de hacer git push. Sirve para ejecutar pruebas automáticas
-        
+<br>
 9. **🔁 Bonus: Comandos útiles para colaboración:**
     - **"git pull"**	Descarga y fusiona los cambios remotos. Úsalo para mantener tu copia actualizada.
     - **"git push"**	Sube tus cambios locales al repositorio remoto (GitHub).
     - **"git push origin <rama>"**	Sube una rama específica al remoto.
     - **"git push -u origin <rama>"**	Lo mismo, pero guarda ese remoto como predeterminado para futuros push.
-
+___
 🧠 **¿Qué hacer en cada momento?**
 1. Empezar un proyecto: **git init**
 2. Clonar un repositorio: **git clone <url>**
@@ -423,3 +430,17 @@ A veces necesitas pausar lo que estás haciendo, o deshacer cosas. Git tiene com
 9. Fusionar ramas: **git merge o git rebase**
 10. Recuperar un cambio perdido: **git reflog**
 11. Pausar cambios sin hacer commit: **git stash y luego git stash pop**
+___
+
+## IA Generativa/Chat-GPT
+**¿Qué es la IA?:** Es le un subcampo de la Inteligencia Artificial, centrado en cómo las máquinas pueden aprender sin ser explícitamente programadas.
+
+**¿Qué es Machine Learning?:** El Machine Learning (aprendizaje automático) es una subárea de la IA que se enfoca en hacer que las máquinas aprendan por sí mismas a partir de datos, en lugar de ser programadas con reglas fijas. Se le da a la máquina una gran cantidad de datos (por ejemplo, imágenes, texto, números…) El sistema detecta patrones y aprende a tomar decisiones basándose en esos datos.
+
+**Ejemplos cotidianos de Machine Learning**
+1. **Asistentes virtuales:** Siri, Google Assistant or Alexa.
+2. **Recomendaciones de música y vídeo:** Netflix or Spotify.
+3. **Chatbots de soporte:** A chatbot on a customer service website.
+4. **Image Recognition:** Google Photos.
+5. **Sistemas de traducción automática:** Google Translate.
+6. **Coches autónomos:** taxis like WAYMO or cars like Tesla. 
