@@ -443,4 +443,30 @@ ___
 3. **Chatbots de soporte:** A chatbot on a customer service website.
 4. **Image Recognition:** Google Photos.
 5. **Sistemas de traducción automática:** Google Translate.
-6. **Coches autónomos:** taxis like WAYMO or cars like Tesla. 
+6. **Coches autónomos:** taxis like WAYMO or cars like Tesla.
+___
+# SEMANA 3
+15/09/2025
+### NETWORKING
+1. IP:
+
+Hacer el ejercicio 1: (ejemplo chrome)
+1. Ir al buscador del chrome/firefox
+2. Nueva ventana de incógnito
+3. Inspeccionar o F12
+
+Revisar programa "Postman"
+y cómo meter cuerpo, cabeceras...etc
+nautilus . + nombre de la imagen por ejemplo = te abre la carpeta donde está esa imagen
+^***La autentificación se suele meter casi siempre en la cabecera
+
+
+
+CLIENTE: MÉTODO, URL, CABECERA, CUERPO Y VERSIÓN
+SERVIDOR: CÓDIGO, MENSAJE, CABECERAS, CUERPO/RECURSO Y VERSIÓN
+
+Tipos de clientes de HTTP: 
+    Navegadores
+    Postman
+    Curl
+    HTTPie
