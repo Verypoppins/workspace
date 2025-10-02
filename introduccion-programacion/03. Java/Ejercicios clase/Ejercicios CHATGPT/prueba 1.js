@@ -183,3 +183,50 @@ function isValidPostalCode(codigoPostal) {
 }
 
 --------------------------------------------------------------
+
+function isValidHexColor(colorExhadecimal) {
+    if(typeof colorExhadecimal !== 'string') {
+        return false;
+    }
+
+    if(!colorExhadecimal.startsWith('#')) {
+        return false;
+    }
+
+    const codigo = colorHexadecimal.slice(1);
+    if (codigo.length !== 6) {
+        return false;
+    }
+
+    const esHex = /^[0-9a-fA-F]{6}$/.test(codigo);
+    if (!esHex) {
+        return false;
+    }
+    return true;
+}
+
+-------------------------------------------------------------------
+
+function isValidScore(puntuacion) {
+    if(typeof puntuacion !== 'string') {
+        return false;
+    }
+    const puntuacionValida = Number(puntuacion);
+    if(isNaN(puntuacionValida) || puntuacionValida < 0 || puntuacionValida > 100) {
+        return false;
+    }
+    return true;
+}
+
+----------------------------------------------------------------------
+
+function isValidTemperature(grados) {
+    if(typeof grados !== 'string') {
+        return false;
+    }
+    const esUnNumero = Number(grados);
+    if(isNaN(esUnNumero) || !Number.isInteger(esUnNumero) || esUnNumero < -50 || esUnNumero > 50) {
+        return false; 
+    }
+    return true;
+}
