@@ -1,0 +1,27 @@
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400; /* Regular por defecto */
+
+  display: flex;
+  flex-direction: column; /* Esto pone los elementos uno encima de otro */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+
+  height: 100vh; /* Ocupa toda la pantalla */
+  text-align: center; /* Centra el texto dentro de cada elemento */
+  margin: 0; /* Quita márgenes por defecto */
+}
+
+/* Estilo específico para títulos y párrafos */
+h1 {
+  font-weight: 700; /* Bold */
+}
+
+h2 {
+  font-weight: 400;
+}
+
+p {
+  font-weight: 300;
+  font-size: 20px;
+}
