@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Paso 1: Leer el archivo y ordenar las URLs alfabéticamente
+# Lo guardamos en una variable para poder manipularlas
+urls=$(sort urls.txt)
+
+# Paso 2: Extraer el dominio de cada URL (eliminamos http://www.)
+# Usamos un array para guardar solo los dominios (sin http://www. o https://www.)
+declare -A dominios
+
+# Leemos línea por línea y extraemos el dominio
+while read url; do
+    # Elimina el prefijo "http://www." o "https://www." (si existe)
+    dominio=$(echo $url | sed -E 's|https?://(www\.)?([^/]+).*|\2|')
+    ((dominios["$dominio"]++))  # Cuenta cuántas veces aparece ese dominio
+done <<< "$urls"
+
+# Paso 3: Ver qué dominio aparece solo una vez
+for dominio in "${!dominios[@]}"; do
+    if [ "${dominios[$dominio]}" -eq 1 ]; then
+        echo "El dominio único es: $dominio"
+        break  # Salimos en cuanto encontramos el primer dominio único
+    fi
+done

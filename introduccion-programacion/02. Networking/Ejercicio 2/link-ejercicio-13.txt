@@ -1,0 +1,34 @@
+> http POST https://reqres.in/api/login email="eve.holt@reqres.in" password=”cityslicka” x-api-key:reqres-free-v1
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+CF-RAY: 98105785eb0f0144-MAD
+Connection: keep-alive
+Content-Length: 29
+Content-Type: application/json; charset=utf-8
+Date: Thu, 18 Sep 2025 11:00:50 GMT
+Etag: W/"1d-lGCrvD6B7Qzk11+2C98+nGhhuec"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Ratelimit-Limit: 100
+Ratelimit-Policy: 100;w=60
+Ratelimit-Remaining: 94
+Ratelimit-Reset: 32
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=1%2Fk3OCB%2B0dk8qXBK%2Fi92wP4ioJAh3GIkA9fvWNQe3kM%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1758193250"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=1%2Fk3OCB%2B0dk8qXBK%2Fi92wP4ioJAh3GIkA9fvWNQe3kM%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1758193250"
+Server: cloudflare
+Vary: Origin
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Request-Id: 8a980d32-691a-2b8d-57e6-3170819c8a5c
+X-Xss-Protection: 1; mode=block
+cf-cache-status: DYNAMIC
+server-timing: cfL4;desc="?proto=TCP&rtt=22876&min_rtt=22099&rtt_var=8842&sent=5&recv=7&lost=0&retrans=0&sent_bytes=2833&recv_bytes=957&delivery_rate=131046&cwnd=251&unsent_bytes=0&cid=969e76ef7fa288e7&ts=143&x=0"
+
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
+

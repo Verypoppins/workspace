@@ -1,0 +1,33 @@
+> http GET https://reqres.in/api/unknown/23 \x-api-key:reqres-free-v1
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+CF-RAY: 981016acbaeee06f-MAD
+Cache-Control: max-age=14400
+Connection: keep-alive
+Content-Length: 2
+Content-Type: application/json; charset=utf-8
+Date: Thu, 18 Sep 2025 10:16:34 GMT
+Etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Ratelimit-Limit: 100
+Ratelimit-Policy: 100;w=60
+Ratelimit-Remaining: 96
+Ratelimit-Reset: 4
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=LKYVKHVWBwMKShCTS3fE2HOnL6Wnqu1oF%2BY%2BVWLdFHc%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1758190594"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=LKYVKHVWBwMKShCTS3fE2HOnL6Wnqu1oF%2BY%2BVWLdFHc%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1758190594"
+Server: cloudflare
+Vary: Origin, Accept-Encoding
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Request-Id: d04ed9c9-388d-b28d-4862-5ee5d6cb6239
+X-Xss-Protection: 1; mode=block
+cf-cache-status: MISS
+server-timing: cfL4;desc="?proto=TCP&rtt=22984&min_rtt=22690&rtt_var=8718&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2832&recv_bytes=794&delivery_rate=127633&cwnd=241&unsent_bytes=0&cid=b88ed2f4031b5ee1&ts=117&x=0"
+
+{}
+

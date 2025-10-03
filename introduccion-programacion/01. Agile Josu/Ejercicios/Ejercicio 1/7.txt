@@ -1,0 +1,8 @@
+folder1
+folder1/con-texto.txt
+folder1/vacio.txt
+folder1/abc.txt
+imagenes
+primero.txt
+segundo.txt
+tercero.txt

@@ -1,0 +1,31 @@
+total 88
+drwxrwxr-x 4 usuario usuario 4096 sep  3 12:12 ALBANILES-DIGITALES-2025
+-rw-rw-r-- 1 usuario usuario    0 sep  1 19:05 archivo.txt
+-rw-rw-r-- 1 usuario usuario  267 sep  2 16:21 completo.txt
+-rw-rw-r-- 1 usuario usuario    0 sep  2 16:33 copia-original.txt
+-rw-rw-r-- 1 usuario usuario    0 sep  1 19:11 copia.txt
+drwxr-xr-x 2 usuario usuario 4096 sep  3 12:02 Descargas
+drwxr-xr-x 2 usuario usuario 4096 sep  1 19:14 Documentos
+drwxr-xr-x 2 usuario usuario 4096 oct 17  2024 Escritorio
+-rw-rw-r-- 1 usuario usuario    0 sep  1 19:37 file1.txt
+-rw-rw-r-- 1 usuario usuario    0 sep  1 19:37 file2.txt
+-rw-rw-r-- 1 usuario usuario    0 sep  1 19:37 file3.txt
+drwxr-xr-x 3 usuario usuario 4096 sep  3 13:02 Imágenes
+-rw-rw-r-- 1 usuario usuario  296 sep  2 17:03 lista_archivos.txt
+-rw-rw-r-- 1 usuario usuario    0 sep  3 10:05 ls
+-rw-rw-r-- 1 usuario usuario   19 sep  3 10:05 mensaje.txt
+drwxr-xr-x 2 usuario usuario 4096 oct 17  2024 Música
+-rw-rw-r-- 1 usuario usuario   34 sep  2 16:50 notas.txt
+-rw-rw-r-- 1 usuario usuario  141 sep  2 16:18 parte1.txt
+-rw-rw-r-- 1 usuario usuario  126 sep  2 16:18 parte2.txt
+drwxr-xr-x 2 usuario usuario 4096 oct 17  2024 Plantillas
+drwxrwxr-x 5 usuario usuario 4096 sep  2 16:46 Proyecto
+drwxrwxr-x 3 usuario usuario 4096 sep  1 19:50 ProyectosAntiguos
+drwxr-xr-x 2 usuario usuario 4096 oct 17  2024 Público
+-rw-rw-r-- 1 usuario usuario  249 sep  2 16:54 registro.log
+-rw-rw-r-- 1 usuario usuario    0 sep  3 13:43 salida_comando.txt
+-rw-rw-r-- 1 usuario usuario  757 sep  2 19:56 SEMANA 0.txt
+drwx------ 6 usuario usuario 4096 sep  2 16:01 snap
+-rw-rw-r-- 1 usuario usuario   80 sep  1 19:24 textolargo.txt
+-rw-rw-r-- 1 usuario usuario   87 sep  2 16:52 texto.txt
+drwxr-xr-x 2 usuario usuario 4096 oct 17  2024 Vídeos

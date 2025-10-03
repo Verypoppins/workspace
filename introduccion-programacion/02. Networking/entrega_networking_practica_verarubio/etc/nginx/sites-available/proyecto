@@ -1,0 +1,107 @@
+server {
+    listen 80;
+    listen [::]:80;
+
+	#El directorio donde estan mis archivos HTML
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+	 access_log /var/www/html/logs.log;
+
+    # Archivos normales
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Error 500
+    location /error {
+        return 500;
+    }
+
+    # Cabecera inventada
+    location /cabecera {
+        add_header cabecera "Hola Ivan, esto cuesta un poco e" always;
+        return 204;
+    }
+
+    # 4 métodos principales
+    location /metodo {
+        if ($request_method = GET) {
+            return 201 '{"mensaje": "Has hecho una petición GET"}';
+        }
+        if ($request_method = POST) {
+            return 201 '{"mensaje": "Has hecho una petición POST"}';
+        }
+        if ($request_method = PUT) {
+            return 201 '{"mensaje": "Has hecho una petición PUT"}';
+        }
+        if ($request_method = DELETE) {
+            return 201 '{"mensaje": "Has hecho una petición DELETE"}';
+        }
+        return 405;  # Método no permitido
+    }
+
+	# Redireccion temporal a https://w3schools.com
+	location /redireccion1 {
+		return 302 https://w3schools.com;
+	}
+	# Redirección temporal a la ruta /cabecera de nuestro servidor
+	location /redireccion2 {
+    return 302 http://0.0.0.0/cabecera;
+	}
+
+	location /respuesta {
+        if ($arg_json) {
+            add_header Content-Type application/json;
+            return 200 '{"mensaje":"Has enviado JSON"}';
+        }
+        if ($arg_html) {
+            add_header Content-Type text/html;
+            return 200 '<h1>Has enviado HTML</h1>';
+        }
+        return 404;
+    }
+}
+
+server {
+    listen 8000;
+    listen [::]:8000;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    # Archivos normales
+    location / {
+        try_files $uri $uri/ =404;
+    }
+ }
+
+ server {
+    # Puerto HTTPS
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    # Nombre del servidor
+    server_name 0.0.0.0;
+
+    # EL directorio donde estan mis archivos HTML
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    # Certificado y clave privada para HTTPS
+    ssl_certificate     /etc/nginx/certs/certificado1.pem;
+    ssl_certificate_key /etc/nginx/certs/clave1.pem;
+
+    # Protocolos y cifrados seguros
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers   HIGH:!aNULL:!MD5;
+
+    # Autenticacion basica
+    auth_basic "Contenido protegido";  # Mensaje que vera el usuario al pedir usuario/contraseña
+    auth_basic_user_file /etc/nginx/.htpasswd;  # Archivo con los usuarios y contraseñas
+
+    # Servimos los archivos estáticos
+    location / {
+        try_files $uri $uri/ =404;  # Si no encuentra el archivo, devuelve 404
+    }
+}

@@ -1,0 +1,27 @@
+> http DELETE  https://reqres.in/api/users/2 x-api-key:reqres-free-v1
+HTTP/1.1 204 No Content
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+CF-RAY: 98103851cd36cc48-MAD
+Connection: keep-alive
+Date: Thu, 18 Sep 2025 10:39:32 GMT
+Etag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Ratelimit-Limit: 100
+Ratelimit-Policy: 100;w=60
+Ratelimit-Remaining: 94
+Ratelimit-Reset: 48
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=2ouCuPPV50OK88qcMO%2B7cqmV8Mm0EBbJKNH7fPdObY4%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1758191972"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=2ouCuPPV50OK88qcMO%2B7cqmV8Mm0EBbJKNH7fPdObY4%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1758191972"
+Server: cloudflare
+Vary: Origin
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Request-Id: 0e4f99a5-6b09-8ada-c99c-744672e57cea
+X-Xss-Protection: 1; mode=block
+cf-cache-status: DYNAMIC
+server-timing: cfL4;desc="?proto=TCP&rtt=22995&min_rtt=22764&rtt_var=8701&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2832&recv_bytes=813&delivery_rate=127218&cwnd=252&unsent_bytes=0&cid=fdd0f91b3017cbba&ts=208&x=0"

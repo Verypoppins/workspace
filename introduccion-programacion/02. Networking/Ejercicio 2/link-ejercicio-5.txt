@@ -1,0 +1,47 @@
+> http GET https://reqres.in/api/unknown/2
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+Age: 1449
+CF-RAY: 980fbfa1ddae41e4-MAD
+Cache-Control: max-age=14400
+Connection: keep-alive
+Content-Encoding: br
+Content-Type: application/json; charset=utf-8
+Date: Thu, 18 Sep 2025 09:17:08 GMT
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Ratelimit-Limit: 100
+Ratelimit-Policy: 100;w=60
+Ratelimit-Remaining: 92
+Ratelimit-Reset: 59
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=6IP88ieq9xl8usck%2FnrPJMzwELo12h4FHyStw8DE4Ho%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1757553623"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=6IP88ieq9xl8usck%2FnrPJMzwELo12h4FHyStw8DE4Ho%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1757553623"
+Server: cloudflare
+Transfer-Encoding: chunked
+Vary: Origin, Accept-Encoding
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Request-Id: c5c9c944-8ee3-f123-f374-3ac527a54293
+X-Xss-Protection: 1; mode=block
+cf-cache-status: HIT
+etag: W/"122-EJoELj/0trWDxXZhKN3eWEbbcBA"
+server-timing: cfL4;desc="?proto=TCP&rtt=20947&min_rtt=20596&rtt_var=7974&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2832&recv_bytes=766&delivery_rate=140609&cwnd=252&unsent_bytes=0&cid=cabe92466b570119&ts=56&x=0"
+
+{
+    "data": {
+        "color": "#C74375",
+        "id": 2,
+        "name": "fuchsia rose",
+        "pantone_value": "17-2031",
+        "year": 2001
+    },
+    "support": {
+        "text": "Tired of writing endless social media content? Let Content Caddy generate it for you.",
+        "url": "https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral"
+    }
+}
+

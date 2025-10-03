@@ -1,27 +1,43 @@
+/* Fuente base para todo el documento */
 body {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 400; /* Regular por defecto */
-
   display: flex;
-  flex-direction: column; /* Esto pone los elementos uno encima de otro */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-
+  flex-direction: column; /* Elementos uno encima de otro */
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
   height: 100vh; /* Ocupa toda la pantalla */
   text-align: center; /* Centra el texto dentro de cada elemento */
   margin: 0; /* Quita márgenes por defecto */
+  background-color: rgb(105, 75, 175); /* Fondo negro */
+  color: rgb(31, 31, 31); /* Texto blanco */
 }
 
-/* Estilo específico para títulos y párrafos */
+/* Estilos específicos para títulos y párrafos */
 h1 {
-  font-weight: 700; /* Bold */
+  font-weight: 500; /* Negrita */
+  font-size: 3rem;
+  margin: 0.5rem 0;
 }
 
 h2 {
   font-weight: 400;
+  font-style: regular; /* Cursiva */
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
 p {
-  font-weight: 300;
-  font-size: 20px;
+  font-weight: 300; /* Light */
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  max-width: 850px; /* Para que no sea demasiado ancho */
+}
+
+/* Imagen */
+img {
+  width: 250px;
+  height: 250px;
+  margin-top: 1rem;
+  border-radius: 8px; /* Opcional: bordes redondeados */
 }

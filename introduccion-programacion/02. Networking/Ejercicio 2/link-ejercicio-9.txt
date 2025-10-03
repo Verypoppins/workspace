@@ -1,0 +1,37 @@
+> http PATCH https://reqres.in/api/users/2 name="morpheus" job="zion resident" x-api-key:reqres-free-v1 --json
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+CF-RAY: 981032b43c99e9da-MAD
+Connection: keep-alive
+Content-Encoding: br
+Content-Type: application/json; charset=utf-8
+Date: Thu, 18 Sep 2025 10:35:42 GMT
+Etag: W/"50-NcWbX7e2uP4xvusmBveoRcdw7IU"
+Nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+Ratelimit-Limit: 100
+Ratelimit-Policy: 100;w=60
+Ratelimit-Remaining: 98
+Ratelimit-Reset: 60
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=H0JwnGOTYHshhI2VthXP6qId0ajnHnX0%2Fk4jFgjS1es%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1758191742"}],"max_age":3600}
+Reporting-Endpoints: heroku-nel="https://nel.heroku.com/reports?s=H0JwnGOTYHshhI2VthXP6qId0ajnHnX0%2Fk4jFgjS1es%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1758191742"
+Server: cloudflare
+Transfer-Encoding: chunked
+Vary: Origin
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Request-Id: 935329a2-de99-f090-8269-dd61cb21094c
+X-Xss-Protection: 1; mode=block
+cf-cache-status: DYNAMIC
+server-timing: cfL4;desc="?proto=TCP&rtt=22841&min_rtt=21868&rtt_var=8896&sent=5&recv=7&lost=0&retrans=0&sent_bytes=2833&recv_bytes=935&delivery_rate=132430&cwnd=251&unsent_bytes=0&cid=5f3d525205a7efb0&ts=157&x=0"
+
+{
+    "job": "zion resident",
+    "name": "morpheus",
+    "updatedAt": "2025-09-18T10:35:42.220Z"
+}
+

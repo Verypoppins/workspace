@@ -1,0 +1,99 @@
+día 2:
+- archivos .log = sirven para guardar eventos, huellas que van sucendiendo. 
+- la flecha hacia arriba nos muestra todos los comandos que hemos utilizado.
+contl + c= elimina el texto que hemos escrito
+- ls + iniciales + tabulador = nos ayuda a escribir de forma más rápida 
+- para hacer un contl c / contl v = contl shift c (para copiar) / contrl + shift + v/ o con la rueda del ratón.
+- ejercicio 5: bash + (nombre) +.sh / abrirlo con "nano" y añadir ahí dentro todos los comandos que quiera. 
+
+grep "error" registro.log | wc -l
+
+EJERCICIO 25 EN ADELANTE POR HACER
+--------
+visual code (instalar extensiones)
+Git history
+GIT Lens
+ESLint (JavaScript)
+Prettier - C..
+----
+.md
+control de versiones:GITHUB
+markdown estudiar y ver cómo funciona
+
+docker ps: salen los dockers que tengo
+docker stop + mi numero de docker = se para
+docker ps -a = no está borrado pero está por ahí
+docker rm + el docker que quiera eliminar y lo borra
+docker compose up = lanzar todos los dockers que quiera
+
+code .= revisar que era esto
+
+---
+git status = dice qué cambios has hecho
+git diff = especifica los cambios más en concreto
+
+COSAS QUE SÍ O SÍ TIENES QUE HACER PARA SUBIR LOS ARCHIVOS/APUNTES A GITHUB
+1. git add .= todos los cambios me los añades
+2. git commit -m + el mensaje = se hace un nuevo puento en mi historia
+3. git push origin master
+
+filetype.pdf
+
+
+----- 
+
+
+Verypoppins28
+eK8u!W$tvsH!Kn4hij
+
+Para acceder al LM studio:
+primero estar en la ubicación: /Descargas/lmstudio
+
+añadir lo siguiente para poder entrar: 
+./LM-Studio-0.3.25-2-x64.AppImage --no-sandbox
+
+LLAMA (dentro de lmstudio)
+------
+ejercicio: Coger el archivo urls.txt y hacer un script en Bash o en JavaScript que te
+diga qué URL es diferente:
+	SOLUCIÓN EXPLICADA:
+	1. crear un archivo en terminal con "nano revisar_urls_diferentes.sh"
+	2. cuando abra, meter el siguiente código que lo explica: 
+		#!/bin/bash
+
+			# Paso 1: Leer el archivo línea por línea
+			while IFS= read -r line; do
+			    # Paso 2: Contar el número de caracteres de cada línea
+			    length=${#line}
+
+			    # Paso 3: Verificar si la línea tiene más o menos de 31 caracteres
+			    if [ $length -gt 31 ]; then
+				echo "Línea con más de 31 caracteres: $line"
+			    elif [ $length -lt 31 ]; then
+				echo "Línea con menos de 31 caracteres: $line"
+			    fi
+			done < "archivo.txt"  # Reemplaza "archivo.txt" con el nombre de tu archivo
+			
+			(explicación comandos: Explicación del código:
+
+while IFS= read -r line; do
+Este bucle lee el archivo línea por línea. IFS= garantiza que no se recorten los espacios al principio o final de la línea. -r evita que se interpretan caracteres de escape.
+
+length=${#line}
+Esta línea cuenta el número de caracteres en la variable line usando ${#line}, que obtiene la longitud de la línea.
+
+Condiciones if
+
+Si la línea tiene más de 31 caracteres ($length -gt 31), imprime un mensaje diciendo que la línea tiene más de 31 caracteres.
+
+Si la línea tiene menos de 31 caracteres ($length -lt 31), imprime un mensaje diciendo que la línea tiene menos de 31 caracteres.
+
+Si la línea tiene exactamente 31 caracteres, no hace nada (no se imprime nada).
+
+done < "archivo.txt"
+Este comando indica que el archivo que se debe leer es archivo.txt. Reemplaza "archivo.txt" con el nombre de tu archivo real.)
+
+3. Guardar, salir.
+4. chmod +x revisar_lineas.sh
+5../revisar_lineas.sh
+
