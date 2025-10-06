@@ -8,4 +8,5 @@ test('isLeapYear("1990") should return false', () => {
   expect(isLeapYear('2100')).toBe(false); // Prueba que 2100 no lo es
   expect(isLeapYear('2400')).toBe(true); // Prueba que 2400 sí lo es
   expect(isLeapYear('abcd')).toBe(false); // Prueba que si no es un número devuelva falso
+  expect(isLeapYear(2000)).toBe(false); // Prueba que si no es una string devuelva falso
 });
