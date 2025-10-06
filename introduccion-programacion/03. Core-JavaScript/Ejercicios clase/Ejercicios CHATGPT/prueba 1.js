@@ -65,7 +65,7 @@ function isValidScore (examen) {
     return true;
 }
 
----------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------
 
 function isValidPassword(contraseña) {
     if (typeof contraseña !== 'string') {
@@ -93,9 +93,9 @@ function isValidPassword(contraseña) {
     return true;
 }
 
-console.log(isValidPassword('Holaquetal3');
+console.log(isValidPassword('Holaquetal3'));
 
--------------------------------------------------------
+//-------------------------------------------------------
 
 function isValidEmail(correo) {
     if (typeof correo !== 'string') {
@@ -116,7 +116,7 @@ function isValidEmail(correo) {
     return true;
 }
 
-------------------------------------------------------------
+//------------------------------------------------------------
 
 function isValidAge(edad) {
     if(typeof edad !== 'string') {
@@ -130,7 +130,7 @@ function isValidAge(edad) {
     return true;
 }
 
----------------------------------------------------------------
+//---------------------------------------------------------------
 
 function isValidUsername(nombre) {
     if(typeof nombre !== 'string') {
@@ -149,7 +149,7 @@ function isValidUsername(nombre) {
     return true;
 }
 
-----------------------------------------------------------------
+//----------------------------------------------------------------
 
 function isValidTemperature(temperatura) {
     if (typeof temperatura !== 'string') {
@@ -164,7 +164,7 @@ function isValidTemperature(temperatura) {
     return true;
 }
 
----------------------------------------------------------------
+//---------------------------------------------------------------
 
 function isValidPostalCode(codigoPostal) {
     if(typeof codigoPostal !== 'string') {
@@ -182,7 +182,7 @@ function isValidPostalCode(codigoPostal) {
     return true;
 }
 
---------------------------------------------------------------
+//--------------------------------------------------------------
 
 function isValidHexColor(colorExhadecimal) {
     if(typeof colorExhadecimal !== 'string') {
@@ -205,7 +205,7 @@ function isValidHexColor(colorExhadecimal) {
     return true;
 }
 
--------------------------------------------------------------------
+//-------------------------------------------------------------------
 
 function isValidScore(puntuacion) {
     if(typeof puntuacion !== 'string') {
@@ -218,7 +218,7 @@ function isValidScore(puntuacion) {
     return true;
 }
 
-----------------------------------------------------------------------
+//----------------------------------------------------------------------
 
 function isValidTemperature(grados) {
     if(typeof grados !== 'string') {

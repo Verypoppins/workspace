@@ -1,4 +1,4 @@
-const { isLeapYear } = require('./Ejercicio_1_Vera_Rubio.js');
+const { isLeapYear } = require('./ejercicio_1_vera_rubio.js');
 
 test('isLeapYear("1990") should return false', () => {
   expect(isLeapYear('1990')).toBe(false); // Prueba que 1990 no es un año bisiesto
