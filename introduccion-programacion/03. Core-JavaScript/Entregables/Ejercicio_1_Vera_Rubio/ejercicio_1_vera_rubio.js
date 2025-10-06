@@ -13,21 +13,21 @@
 //------------------------------------------------------------------------------------
 
 function isLeapYear(year) {
-// Verificar que el argumento es de tipo string
-if (typeof year !== 'string') {
+  // Verifica que mi argumento es de tipo string
+  if (typeof year !== 'string') {
     return false;
-}
-// Convertir el año a número
-const yearNum = Number(year);
-// Verificar que el año está en el rango permitido
-if (isNaN(yearNum) || yearNum < 1900 || yearNum > 100000) {
+  }
+  // Convierte el año a un número
+  const yearNum = Number(year);
+  // Verifica que el año está en el rango que se pide
+  if (isNaN(yearNum) || yearNum < 1900 || yearNum > 100000) {
     return false;
-}
-if ((yearNum % 4 === 0 && yearNum % 100 !== 0) || (yearNum % 400 === 0)) {
+  }
+  if ((yearNum % 4 === 0 && yearNum % 100 !== 0) || yearNum % 400 === 0) {
     return true; // Es un año bisiesto
-} else {
+  } else {
     return false; // No es un año bisiesto
-}
+  }
 }
 
 // Exporta la función
