@@ -1,0 +1,22 @@
+/*estilos básicos teclado*/
+#keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.key {
+  padding: 8px 10px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.key:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}

@@ -15,7 +15,7 @@ function createObject(name, subs) {
     hash: name.length * subs,
 
     getStatus: function () {
-      return `El canal de ${name} tiene ${subs} suscriptores`;
+      return 'El canal de ' + name + ' tiene ' + subs + ' suscriptores';
     },
   };
 }
