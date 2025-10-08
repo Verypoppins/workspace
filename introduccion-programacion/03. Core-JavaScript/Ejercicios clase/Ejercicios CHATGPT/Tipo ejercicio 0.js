@@ -95,6 +95,7 @@ function isValidPassword(contraseña) {
 
 console.log(isValidPassword('Holaquetal3'));
 
+
 //-------------------------------------------------------
 
 function isValidEmail(correo) {

@@ -1,0 +1,61 @@
+<!--10. Preguntar un número por input, después, imprimir todos los números
+impares hasta él. Un ejemplo sería: “Dime un número entero”. Le
+respondemos 22. Nos saca por pantalla: 1, 3, 5, 7, …, 21.
+
+<script>
+  // 1️⃣ Pedimos un número al usuario
+  let num = parseInt(prompt('Dime un número entero'));
+
+  // 2️⃣ Bucle del 1 hasta el número dado
+  for (let i = 1; i < num; i++) {
+    // 3️⃣ Solo imprimimos los impares
+    if (i % 2 !== 0) {
+      console.log(i); // o alert(i) si quieres ventana emergente
+    }
+  }
+</script>
+
+//11. Preguntar un número de números a introducir, después, preguntar por
+//esos números, por último, sacar por pantalla la suma de los mismos. Un
+//ejemplo sería: “Dime un número” -> 3. Después, preguntar 3 veces: “uno
+//de los sumandos es?” -> 4, 3, 2. Y por último, cuando se han conseguido
+//todos los números, responder la suma -> 9.
+
+<script>
+  let cantidad = parseInt(prompt('¿Cuántos quieres sumar?'));
+  let suma = 0;
+  for (let i = 1; i <= cantidad; i++) {
+    let numero = parseInt(prompt(`Dime un número ${i}`));
+    suma += numero;
+  }
+  console.log('La suma total es', suma);
+</script>
+
+
+12. Preguntar por pantalla un número entero y que se imprima por pantalla
+un triángulo tipo, siendo el número entero el número de líneas que se
+imprimen. Un ejemplo sería con el número 5:
+
+<script>
+  let input_numero = parseInt(prompt('Escribe un número entero'));
+  for (let i = 0; i <= input_numero; i++) {
+    num = 2 * i;
+    let fila = ' ';
+    for (let j = 0; j < i; j++) {
+      fila += num - 2 * j + ' ';
+    }
+    console.log(fila);
+  }
+</script>-->
+
+<script>
+
+let input_numero = parseInt(prompt("Escribe un numero entero"));
+for (i = 0; i < input_numero; i--) {
+    num = 2 * i
+    let fila = ' ';
+    for (let j = 0; j < i; j++) {
+        fila += num - 2 * j + ' ';
+    }
+    console.log(fila);
+}
