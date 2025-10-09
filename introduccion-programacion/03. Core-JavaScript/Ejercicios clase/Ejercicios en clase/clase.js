@@ -62,3 +62,17 @@ class Circle {
     return this.calculateArea() * altura;
   }
 }
+
+
+//1.1 Crea una jerarquía de clases teórica de tres niveles, la que quieras,
+//sobre un caso que podría ser utilizado en un programa. Ejemplo:
+//Animales -> Mamíferos -> Perros. Después, impleméntalo de manera
+//práctica. Intenta llamar a las diferentes clases, atributos, métodos.
+//Prueba a sustituir métodos, a extenderlos, etc.
+
+const animales = {
+  tipo: 'Mamifero',
+  animal: 'perro'
+  }
+
+console.log.animales[tipo];
