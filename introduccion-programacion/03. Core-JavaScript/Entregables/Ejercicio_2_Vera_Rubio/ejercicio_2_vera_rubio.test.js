@@ -1,5 +1,5 @@
 //ENUNCIADO
-//scribe un código que desarrolle una nueva clase de Arrays (SuperArray) de
+//Escribe un código que desarrolle una nueva clase de Arrays (SuperArray) de
 //manera que se pueda llamar al método snail(rowsCount, colsCount), el cual
 //transforma un array unidimensional (1D) en un array bidimensional (2D)
 //organizado en el patrón conocido como orden de recorrido en caracol.

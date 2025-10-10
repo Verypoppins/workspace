@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resumen completo de operadores</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial;
+        max-width: 900px;
+        margin: 24px auto;
+        padding: 16px;
+        color: #111;
+      }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+      }
+      h2 {
+        margin-top: 24px;
+      }
+      p.lead {
+        color: #333;
+        margin-top: 0;
+      }
+      pre {
+        background: #f4f4f6;
+        padding: 12px;
+        border-radius: 8px;
+        overflow: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 12px 0;
+      }
+      th,
+      td {
+        border: 1px solid #e2e2e6;
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+      code {
+        font-family: SFMono-Regular, Menlo, Monaco, 'Courier New', monospace;
+        background: #fbfbfd;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .out {
+        background: #fffbe6;
+        padding: 10px;
+        border: 1px solid #ffe58f;
+        border-radius: 6px;
+      }
+      footer {
+        margin-top: 18px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .card {
+        background: #f9f9ff;
+        border-left: 5px solid #6c63ff;
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin: 16px 0;
+      }
+      .face {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: bold;
+        color: #fff;
+      }
+      .ok {
+        background: #5cb85c;
+      }
+      .bad {
+        background: #d9534f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resumen completo de operadores comunes</h1>
+    <p class="lead">
+      Guía rápida para recordar los operadores más usados en JavaScript (y casi
+      todos también válidos en C, Java o Python).
+    </p>
+
+    <h2>Operadores de asignación</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Operador</th>
+          <th>Significado</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>=</code></td>
+          <td>Asignación simple</td>
+          <td><code>x = 5</code> asigna 5 a <code>x</code>.</td>
+        </tr>
+        <tr>
+          <td><code>+=</code></td>
+          <td>Suma y asigna</td>
+          <td><code>x += 2</code> → <code>x = x + 2</code>.</td>
+        </tr>
+        <tr>
+          <td><code>-=</code></td>
+          <td>Resta y asigna</td>
+          <td><code>x -= 3</code> → <code>x = x - 3</code>.</td>
+        </tr>
+        <tr>
+          <td><code>*=</code></td>
+          <td>Multiplica y asigna</td>
+          <td><code>x *= 4</code> → <code>x = x * 4</code>.</td>
+        </tr>
+        <tr>
+          <td><code>/=</code></td>
+          <td>Divide y asigna</td>
+          <td><code>x /= 2</code> → <code>x = x / 2</code>.</td>
+        </tr>
+        <tr>
+          <td><code>%=</code></td>
+          <td>Resto y asigna</td>
+          <td><code>x %= 3</code> → <code>x = x % 3</code>.</td>
+        </tr>
+        <tr>
+          <td><code>**=</code></td>
+          <td>Exponente y asigna (JS)</td>
+          <td><code>x **= 2</code> → <code>x = x ** 2</code>.</td>
+        </tr>
+        <tr>
+          <td><code>=+</code></td>
+          <td>No existe realmente; suele ser un error tipográfico</td>
+          <td>
+            <code>x = +y</code> asigna el valor positivo de <code>y</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Operadores aritméticos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Operador</th>
+          <th>Significado</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>+</code></td>
+          <td>Suma o concatenación de cadenas</td>
+          <td><code>5 + 3 = 8</code>, <code>"Hola" + " mundo"</code>.</td>
+        </tr>
+        <tr>
+          <td><code>-</code></td>
+          <td>Resta o negación</td>
+          <td><code>5 - 2 = 3</code>, <code>-x</code>.</td>
+        </tr>
+        <tr>
+          <td><code>*</code></td>
+          <td>Multiplicación</td>
+          <td><code>4 * 3 = 12</code>.</td>
+        </tr>
+        <tr>
+          <td><code>/</code></td>
+          <td>División</td>
+          <td><code>10 / 2 = 5</code>.</td>
+        </tr>
+        <tr>
+          <td><code>%</code></td>
+          <td>Resto (módulo)</td>
+          <td><code>10 % 3 = 1</code>.</td>
+        </tr>
+        <tr>
+          <td><code>**</code></td>
+          <td>Potencia (JS, Python)</td>
+          <td><code>2 ** 3 = 8</code>.</td>
+        </tr>
+        <tr>
+          <td><code>++</code></td>
+          <td>Incremento (JS, C, Java)</td>
+          <td><code>x++</code> o <code>++x</code>.</td>
+        </tr>
+        <tr>
+          <td><code>--</code></td>
+          <td>Decremento</td>
+          <td><code>x--</code> o <code>--x</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Operadores de comparación</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Operador</th>
+          <th>Significado</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>==</code></td>
+          <td>Igualdad (conversión de tipo)</td>
+          <td><code>5 == '5' → true</code>.</td>
+        </tr>
+        <tr>
+          <td><code>===</code></td>
+          <td>Igualdad estricta (sin conversión)</td>
+          <td><code>5 === '5' → false</code>.</td>
+        </tr>
+        <tr>
+          <td><code>!=</code></td>
+          <td>Diferente (conversión)</td>
+          <td><code>5 != '5' → false</code>.</td>
+        </tr>
+        <tr>
+          <td><code>!==</code></td>
+          <td>Diferente estricto</td>
+          <td><code>5 !== '5' → true</code>.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;</code></td>
+          <td>Menor que</td>
+          <td><code>3 &lt; 5 → true</code>.</td>
+        </tr>
+        <tr>
+          <td><code>&lt;=</code></td>
+          <td>Menor o igual que</td>
+          <td><code>3 &lt;= 3 → true</code>.</td>
+        </tr>
+        <tr>
+          <td><code>&gt;</code></td>
+          <td>Mayor que</td>
+          <td><code>6 &gt; 2 → true</code>.</td>
+        </tr>
+        <tr>
+          <td><code>&gt;=</code></td>
+          <td>Mayor o igual que</td>
+          <td><code>6 &gt;= 6 → true</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card">
+      <h3>🧩 Explicación fácil: Estricto vs No estricto</h3>
+      <p>
+        Imagina que estás comparando cosas y a veces te importa solo el
+        <strong>valor</strong>, y otras veces también el
+        <strong>tipo</strong> (si es número, texto, etc).
+      </p>
+
+      <h4>💛 Comparación “no estricta” → <code>==</code></h4>
+      <p>Significa: “¿Tienen el mismo valor, aunque sean cosas distintas?”.</p>
+      <pre><code>5 == "5"  // true → porque convierte el texto en número</code></pre>
+      <p>
+        JavaScript intenta adivinar lo que quieres decir, pero a veces se
+        confunde:
+      </p>
+      <pre><code>0 == false   // true
+"" == 0      // true</code></pre>
+      <p>😬 Por eso puede dar resultados raros.</p>
+
+      <h4>💙 Comparación “estricta” → <code>===</code></h4>
+      <p>
+        Significa: “¿Tienen el mismo valor <strong>y</strong> además son del
+        mismo tipo?”.
+      </p>
+      <pre><code>5 === "5"   // false → porque uno es número y el otro texto</code></pre>
+      <p>Otro ejemplo:</p>
+      <pre><code>0 === false   // false → diferentes tipos</code></pre>
+
+      <p><strong>Cómo recordarlo:</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Operador</th>
+            <th>Qué pregunta</th>
+            <th>Ejemplo</th>
+            <th>Resultado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>==</code></td>
+            <td>¿Son parecidos?</td>
+            <td><code>5 == "5"</code></td>
+            <td><span class="face ok">true</span></td>
+          </tr>
+          <tr>
+            <td><code>===</code></td>
+            <td>¿Son exactamente iguales?</td>
+            <td><code>5 === "5"</code></td>
+            <td><span class="face bad">false</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        ✅ Usa <code>===</code> siempre que compares valores en JavaScript.<br />❌
+        Evita <code>==</code> salvo que realmente necesites permitir
+        conversiones automáticas.
+      </p>
+      <p>
+        📘 En Python o C esto no pasa: <code>==</code> ya es “estricto” por
+        defecto.
+      </p>
+    </div>
+
+    <h2>Operadores lógicos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Operador</th>
+          <th>Significado</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&&</code></td>
+          <td>AND lógico (Y)</td>
+          <td><code>true && false → false</code>.</td>
+        </tr>
+        <tr>
+          <td><code>||</code></td>
+          <td>OR lógico (O)</td>
+          <td><code>true || false → true</code>.</td>
+        </tr>
+        <tr>
+          <td><code>!</code></td>
+          <td>NOT lógico (no)</td>
+          <td><code>!true → false</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Operadores varios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Operador</th>
+          <th>Significado</th>
+          <th>Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>??</code></td>
+          <td>Nullish coalescing (JS)</td>
+          <td>
+            <code>x ?? y</code> devuelve <code>x</code> si no es
+            <code>null</code> ni <code>undefined</code>, si no devuelve
+            <code>y</code>.
+          </td>
+        </tr>
+        <tr>
+          <td><code>?:</code></td>
+          <td>Operador ternario</td>
+          <td><code>condición ? valor_si_true : valor_si_false</code>.</td>
+        </tr>
+        <tr>
+          <td><code>typeof</code></td>
+          <td>Tipo de dato (JS)</td>
+          <td><code>typeof 42 → "number"</code>.</td>
+        </tr>
+        <tr>
+          <td><code>instanceof</code></td>
+          <td>Comprueba si un objeto es instancia de una clase (JS, Java)</td>
+          <td><code>obj instanceof Clase</code>.</td>
+        </tr>
+        <tr>
+          <td><code>in</code></td>
+          <td>
+            Comprueba si una propiedad existe (JS) o si un valor está en una
+            colección (Python)
+          </td>
+          <td><code>'a' in {a:1}</code> o <code>3 in [1,2,3]</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      💡 Consejo: Si dudas entre operadores parecidos, revisa si tu lenguaje usa
+      coerción (como JavaScript) o tipos estrictos (como Python o C). ¡Así
+      evitarás confundir <code>=</code> con <code>==</code> o <code>===</code>!
+    </footer>
+  </body>
+</html>

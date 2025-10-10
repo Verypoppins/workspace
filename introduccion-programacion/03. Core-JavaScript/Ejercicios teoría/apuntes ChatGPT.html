@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Módulo 2 — Arrays y Funciones (Completo)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: #fbfdff;
+        color: #0f1724;
+      }
+      header {
+        background: linear-gradient(90deg, #2c7a7b, #2b6cb0);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      h2 {
+        color: #2c7a7b;
+        margin-top: 22px;
+      }
+      .row {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .col {
+        background: white;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(32, 32, 32, 0.06);
+        flex: 1;
+        min-width: 280px;
+        margin-top: 12px;
+      }
+      pre.code {
+        background: #0b1220;
+        color: #e6eef8;
+        padding: 14px;
+        border-radius: 6px;
+        overflow: auto;
+      }
+      code {
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+      }
+      .example {
+        background: linear-gradient(90deg, #fff7ed, #ebf8ff);
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 10px;
+      }
+      .steps {
+        margin-top: 8px;
+      }
+      ol {
+        margin-left: 18px;
+      }
+      .result {
+        background: #f7fafc;
+        border-left: 4px solid #2c7a7b;
+        padding: 10px 14px;
+        margin-top: 10px;
+        border-radius: 4px;
+      }
+      a {
+        color: #2b6cb0;
+        text-decoration: none;
+      }
+      footer {
+        margin-top: 24px;
+        font-size: 13px;
+        color: #475569;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10px;
+      }
+      td,
+      th {
+        border: 1px solid #e2e8f0;
+        padding: 8px;
+        vertical-align: top;
+      }
+      th {
+        background: #2c7a7b;
+        color: white;
+      }
+      .note {
+        background: #fff8e6;
+        padding: 8px;
+        border-left: 4px solid #f6ad55;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Apuntes visuales — Módulo 2 (Completo)</h1>
+      <div>Arrays y Funciones — Teoría ampliada + ejercicios resueltos</div>
+    </header>
+
+    <section style="margin-top: 18px">
+      <div class="col">
+        <h2>Qué incluye este módulo</h2>
+        <ul>
+          <li>Teoría sobre funciones (tipos, scope, recursividad)</li>
+          <li>Principios DRY, KISS, SOLID (breve)</li>
+          <li>Arrays: creación, recorrido y métodos clave</li>
+          <li>Ejercicios 1–29 resueltos con explicación y resultado</li>
+          <li>Enlaces de referencia</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2>Conceptos clave — Funciones</h2>
+    <div class="col">
+      <p>
+        <strong>¿Por qué funciones?</strong> Para reutilizar código, separar
+        responsabilidades y facilitar pruebas.
+      </p>
+      <p><strong>Tipos:</strong></p>
+      <ul>
+        <li>
+          <code>Declarada</code>: <code>function nombre() { }</code> — hoisting
+          permite usarla antes.
+        </li>
+        <li>
+          <code>Expresión</code>: <code>const f = function() { }</code> — sin
+          hoisting.
+        </li>
+        <li>
+          <code>Flecha</code>: <code>const f = (x) =&gt; x*2</code> — sintaxis
+          más corta, <code>this</code> léxico.
+        </li>
+        <li>
+          <code>Recursiva</code>: se llama a sí misma (útil en árboles,
+          factorial, Fibonacci).
+        </li>
+      </ul>
+      <pre class="code"><code>// Ejemplo de cada tipo
+function declarada(x) { return x*2; }
+const expresion = function(x) { return x*3; }
+const flecha = x => x*4;
+function recursiva(n) { return n<=1?1: n*recursiva(n-1); }</code></pre>
+    </div>
+
+    <h2>Principios de diseño (breve)</h2>
+    <div class="col">
+      <p><strong>DRY</strong>: No repetir código. Extrae funciones.</p>
+      <p><strong>KISS</strong>: Mantén soluciones simples.</p>
+      <p>
+        <strong>SOLID</strong>: Conjunto de principios para diseño orientado a
+        objetos; útil cuando las funciones empiezan a agruparse en clases.
+      </p>
+    </div>
+
+    <h2>Arrays — Métodos clave con ejemplo</h2>
+    <table>
+      <tr>
+        <th>Método</th>
+        <th>Qué hace</th>
+        <th>Ejemplo</th>
+      </tr>
+      <tr>
+        <td><code>push()</code></td>
+        <td>Añade al final</td>
+        <td><code>a.push(5)</code></td>
+      </tr>
+      <tr>
+        <td><code>pop()</code></td>
+        <td>Elimina y devuelve el último</td>
+        <td><code>a.pop()</code></td>
+      </tr>
+      <tr>
+        <td><code>shift()</code></td>
+        <td>Elimina y devuelve el primero</td>
+        <td><code>a.shift()</code></td>
+      </tr>
+      <tr>
+        <td><code>unshift()</code></td>
+        <td>Añade al principio</td>
+        <td><code>a.unshift(0)</code></td>
+      </tr>
+      <tr>
+        <td><code>map()</code></td>
+        <td>Transforma cada elemento y devuelve nuevo array</td>
+        <td><code>[1,2].map(x=>x*2)</code></td>
+      </tr>
+      <tr>
+        <td><code>filter()</code></td>
+        <td>Filtra elementos según condición</td>
+        <td><code>[1,2,3].filter(x=&gt; x&gt;1)</code></td>
+      </tr>
+      <tr>
+        <td><code>reduce()</code></td>
+        <td>Combina elementos en un valor</td>
+        <td><code>[1,2,3].reduce((a,b)=&gt;a+b)</code></td>
+      </tr>
+      <tr>
+        <td><code>find()</code></td>
+        <td>Devuelve el primer elemento que cumple</td>
+        <td><code>[1,2,3].find(x=&gt; x&gt;1)</code></td>
+      </tr>
+      <tr>
+        <td><code>sort()</code></td>
+        <td>Ordena in-place (cuidado con números)</td>
+        <td><code>[2,10,3].sort((a,b)=&gt;a-b)</code></td>
+      </tr>
+    </table>
+
+    <h2>Enlaces y bibliografía</h2>
+    <ul>
+      <li>
+        <a
+          href="https://www.aprendejavascript.dev/clase/funciones/tu-primera-funcion"
+          target="_blank"
+          >AprendeJavaScript — Tu primera función</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.aprendejavascript.dev/clase/funciones/parametros"
+          target="_blank"
+          >AprendeJavaScript — Parámetros</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.aprendejavascript.dev/clase/arrays/arrays-que-son"
+          target="_blank"
+          >AprendeJavaScript — Arrays</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/arguments-optional"
+          target="_blank"
+          >FreeCodeCamp — Ejercicio funciones</a
+        >
+      </li>
+    </ul>
+
+    <h2>Ejercicios resueltos</h2>
+    <p>
+      Incluye análisis, pseudocódigo, solución JS y resultado para cada
+      ejercicio listado en tu PDF.
+    </p>
+
+    <h3>Ejercicio 1 — Por qué las funciones</h3>
+    <p>
+      <strong>Enunciado:</strong> Explica por qué usar funciones (teórico).
+      <strong>Respuesta:</strong> Reutilización, legibilidad, testing.
+    </p>
+
+    <h3>Ejercicio 2 — Tipo de argumentos (JS no tipado)</h3>
+    <p>
+      <strong>Enunciado:</strong> ¿Qué pasa si pasas string a parámetro que
+      espera número? <strong>Respuesta:</strong> JavaScript intentará convertir;
+      usa <code>Number()</code> y valida con <code>Number.isNaN()</code>.
+    </p>
+
+    <h3>Ejercicio 3 — Alcance / scope</h3>
+    <div class="col">
+      <pre class="code"><code>// Ejemplo scope
+const x = "global";
+function test() {
+  const x = "local";
+  console.log(x); // "local"
+}
+test();
+console.log(x); // "global"</code></pre>
+      <div class="result">
+        Variables declaradas con <code>let/const</code> tienen alcance de
+        bloque; <code>var</code> es de función.
+      </div>
+    </div>
+
+    <h3>Ejercicio Arrays — 1: Spread copy y modificación</h3>
+    <div class="col">
+      <pre class="code"><code>const a = [1,2,3];
+const b = [...a];
+b.push(4);
+console.log(a); // [1,2,3]
+console.log(b); // [1,2,3,4]</code></pre>
+      <div class="result">
+        Spread hace copia superficial (shallow). Si los elementos son objetos,
+        las referencias internas se comparten.
+      </div>
+    </div>
+
+    <h3>Ejercicio Arrays — 2: Asignar índice fuera de tamaño</h3>
+    <div class="col">
+      <pre class="code"><code>const arr = new Array(4);
+arr[26] = "hola";
+console.log(arr.length); // 27
+console.log(arr[5]); // undefined</code></pre>
+      <div class="result">JS permite índices dispersos; crea "huecos".</div>
+    </div>
+
+    <h3>Ejercicio 4 — Reverse sin .reverse()</h3>
+    <div class="col">
+      <pre class="code"><code>function reverseArray(a) {
+  const res = [];
+  for (let i = a.length - 1; i >= 0; i--) res.push(a[i]);
+  return res;
+}
+console.log(reverseArray([1,2,3])); // [3,2,1]</code></pre>
+    </div>
+
+    <h3>Ejercicio 5 — Borrar elementos no deseados</h3>
+    <div class="col">
+      <pre class="code"><code>function cleanArray(a) {
+  return a.filter(x => x !== undefined && x !== null && x !== false && x !== "");
+}
+console.log(cleanArray([5,4,3,null,2,"",1])); // [5,4,3,2,1]</code></pre>
+      <div class="result">
+        Usamos <code>filter</code> para devolver nuevo array sin elementos no
+        deseados.
+      </div>
+    </div>
+
+    <h3>Ejercicio 6 — Comprobar arrays idénticos</h3>
+    <div class="col">
+      <pre class="code"><code>function arraysIguales(a,b, comprobarOrden=true) {
+  if (a.length !== b.length) return false;
+  if (comprobarOrden) {
+    for(let i=0;i<a.length;i++) if (a[i] !== b[i]) return false;
+    return true;
+  } else {
+    const sa = [...a].sort(); const sb = [...b].sort();
+    return sa.every((v,i) => v === sb[i]);
+  }
+}</code></pre>
+      <div class="result">
+        Si no importa el orden, comparamos arrays ordenados.
+      </div>
+    </div>
+
+    <h3>Ejercicio 7 — create_multiples</h3>
+    <div class="col">
+      <pre class="code"><code>function create_multiples(size, n) {
+  const res = [];
+  for (let i = 1; i <= size; i++) res.push(n * i);
+  return res;
+}
+console.log(create_multiples(2,4)); // [4,8]</code></pre>
+    </div>
+
+    <h3>Ejercicio 8 — convert_arrays_to_strings</h3>
+    <div class="col">
+      <pre class="code"><code>function convert_arrays_to_strings(names, ages) {
+  return names.map((name,i) => `${name} tiene ${ages[i]} años.`).join("\\n");
+}
+console.log(convert_arrays_to_strings(['Perico','Juan'],[22,33]));</code></pre>
+      <div class="result">Salida con saltos de línea de cada frase.</div>
+    </div>
+
+    <h3>Ejercicio 9 — Input hasta 0 y mostrar valores</h3>
+    <div class="col">
+      <pre class="code"><code>const collected = [];
+while(true) {
+  const v = prompt("Introduce valor (0 para terminar):");
+  if (v === null) break;
+  if (v === "0") break;
+  collected.push(v);
+}
+console.log(collected);</code></pre>
+      <div class="result">
+        Ejemplo: inputs 2,3,4,hola,0 → ["2","3","4","hola"]
+      </div>
+    </div>
+
+    <h3>Ejercicio 10 — Eliminar duplicados</h3>
+    <div class="col">
+      <pre class="code"><code>function unique(a) {
+  return Array.from(new Set(a));
+}
+console.log(unique([1,2,2,3,3,4])); // [1,2,3,4]</code></pre>
+      <div class="result">
+        Set elimina duplicados; orden se preserva según inserción.
+      </div>
+    </div>
+
+    <h3>Ejercicio 11 — Media de array</h3>
+    <div class="col">
+      <pre class="code"><code>function average(a) {
+  const nums = a.filter(x => typeof x === 'number');
+  if (nums.length === 0) return null;
+  const sum = nums.reduce((s,x) => s + x, 0);
+  return sum / nums.length;
+}
+console.log(average([1,2,3])); // 2</code></pre>
+      <div class="result">Devuelve null si no hay valores numéricos.</div>
+    </div>
+
+    <h3>Ejercicio 12 — Desviación típica</h3>
+    <div class="col">
+      <pre class="code"><code>function stdDev(a) {
+  const nums = a.filter(x => typeof x === 'number');
+  if (nums.length === 0) return null;
+  const m = average(nums);
+  const varian = nums.reduce((s,x) => s + Math.pow(x - m,2), 0) / nums.length;
+  return Math.sqrt(varian);
+}</code></pre>
+      <div class="result">
+        Desviación poblacional. Para muestral divide por (n-1).
+      </div>
+    </div>
+
+    <h3>Ejercicio 13 — Borrar elementos entre 10 y 20</h3>
+    <div class="col">
+      <pre class="code"><code>function removeBetween10and20(a) {
+  return a.filter(x => !(typeof x === 'number' && x >= 10 && x <= 20));
+}</code></pre>
+    </div>
+
+    <h3>Ejercicio 14 — Referencias Java (nota)</h3>
+    <div class="col">
+      <p>
+        El PDF original recomienda ejercicios en Java; aquí ofrecemos
+        equivalentes en JS cuando corresponde.
+      </p>
+    </div>
+
+    <h3>Ejercicio 15 — Conversión Fahrenheit/Celsius</h3>
+    <div class="col">
+      <pre class="code"><code>function fToC(f){ return (f-32)*(5/9); }
+function cToF(c){ return c*(9/5)+32; }
+function convertTemp(val, mode) {
+  if (mode === 'FtoC') return fToC(val);
+  if (mode === 'CtoF') return cToF(val);
+  return null;
+}</code></pre>
+      <div class="result">Ejemplo: convertTemp(32,'FtoC') => 0</div>
+    </div>
+
+    <h3>Ejercicio 16 — Contar dígito en número</h3>
+    <div class="col">
+      <pre class="code"><code>function countDigit(number, digit) {
+  return number.toString().split('').filter(c => c === digit.toString()).length;
+}
+console.log(countDigit(22334324,2)); // 3</code></pre>
+    </div>
+
+    <h3>Ejercicio 17 — Validar DNI (sintaxis)</h3>
+    <div class="col">
+      <pre class="code"><code>function validarDNI(dni) {
+  // Formato: 8 números + letra (simplificado)
+  const re = /^\\d{8}[A-Za-z]$/;
+  return re.test(dni);
+}
+console.log(validarDNI("12345678Z"));</code></pre>
+      <div class="result">
+        Comprueba formato; no calcula letra correcta (puedo añadirlo si
+        quieres).
+      </div>
+    </div>
+
+    <h3>Ejercicio 18 — Pseudocódigo a JS (nota)</h3>
+    <div class="col">
+      <p>
+        Convierte cada paso del pseudocódigo en llamadas de función, variables y
+        bucles; valida tipos y casos borde.
+      </p>
+    </div>
+
+    <h3>Ejercicio 19 — Longitud de la última palabra</h3>
+    <div class="col">
+      <pre class="code"><code>function lengthLastWord(s) {
+  return s.trim().split(/\\s+/).pop().length;
+}
+console.log(lengthLastWord("Hola mundo  ")); // 5</code></pre>
+    </div>
+
+    <h3>Ejercicio 20 — Convertir a título</h3>
+    <div class="col">
+      <pre class="code"><code>function titulo(s) {
+  return s.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(" ");
+}
+console.log(titulo("maría tiene un coche gris"));</code></pre>
+    </div>
+
+    <h3>Ejercicio 21 — Área de un círculo</h3>
+    <div class="col">
+      <pre
+        class="code"
+      ><code>function area_circle(r) { return Math.PI * r * r; }
+console.log(area_circle(2));</code></pre>
+    </div>
+
+    <h3>Ejercicio 22 — Áreas rectángulo y triángulo</h3>
+    <div class="col">
+      <pre class="code"><code>function area_rect(w,h){ return w*h; }
+function area_triangle(b,h){ return (b*h)/2; }</code></pre>
+    </div>
+
+    <h3>Ejercicio 23 — Tamaño en píxels desde esquinas</h3>
+    <div class="col">
+      <pre class="code"><code>function imageSizeFromCorners(p1,p2,p3,p4) {
+  const xs = [p1[0],p2[0],p3[0],p4[0]];
+  const ys = [p1[1],p2[1],p3[1],p4[1]];
+  const width = Math.max(...xs) - Math.min(...xs);
+  const height = Math.max(...ys) - Math.min(...ys);
+  return {width, height};
+}</code></pre>
+    </div>
+
+    <h3>Ejercicio 24 — Área rectángulo por esquinas</h3>
+    <div class="col">
+      <pre class="code"><code>function areaFromCorners(p1,p2,p3,p4) {
+  const s = imageSizeFromCorners(p1,p2,p3,p4);
+  return s.width * s.height;
+}</code></pre>
+    </div>
+
+    <h3>Ejercicio 25 — Cambiar vocales a otra vocal</h3>
+    <div class="col">
+      <pre class="code"><code>function changeVowels(s, v) {
+  return s.replace(/[aeiouáéíóúü]/gi, v);
+}
+console.log(changeVowels("Cuando Fernando Séptimo llevaba pantalón", "o"));</code></pre>
+    </div>
+
+    <h3>Ejercicio 26 — Precio con IVA (por defecto 21%)</h3>
+    <div class="col">
+      <pre
+        class="code"
+      ><code>function priceWithVAT(price, vat=0.21){ return price * (1+vat); }
+console.log(priceWithVAT(100)); // 121</code></pre>
+    </div>
+
+    <h3>Ejercicio 27 — Fibonacci (recursivo)</h3>
+    <div class="col">
+      <pre
+        class="code"
+      ><code>function fib(n) { return n<2? n : fib(n-1) + fib(n-2); }
+console.log(fib(6)); // 8</code></pre>
+      <div class="result">
+        Recursivo es simple pero ineficiente para n grandes; usar memoización o
+        bucle.
+      </div>
+    </div>
+
+    <h3>Ejercicio 28 — Evento ratón que llama función</h3>
+    <div class="col">
+      <pre
+        class="code"
+      ><code>// HTML: &lt;button id="btn"&gt;Saludar&lt;/button&gt;
+document.getElementById("btn").addEventListener("click", function(){ document.body.innerHTML += "<p>Hola</p>"; });</code></pre>
+    </div>
+
+    <h3>Ejercicio 29 — Validar email</h3>
+    <div class="col">
+      <pre class="code"><code>function validarEmail(email) {
+  const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  return re.test(email);
+}
+console.log(validarEmail("ejemplo@dominio.com")); // true</code></pre>
+    </div>
+
+    <footer>
+      <p class="note">
+        Fin del Módulo 2. He incluido soluciones prácticas y trucos. En la
+        siguiente entrega preparo el
+        <strong>Módulo 3 — Objetos, Clases y Herencia</strong> con todos sus
+        ejercicios y ejemplos.
+      </p>
+    </footer>
+  </body>
+</html>
